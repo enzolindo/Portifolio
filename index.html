@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!--
+  PORTFÓLIO — Enzo Geovane Xavier Santos
+  Arquivo: index.html  (estrutura da página)
+  Os estilos ficam em style.css e a interatividade em script.js.
+-->
+<html lang="pt-BR" data-tema="claro">
+<head>
+  <meta charset="UTF-8">
+  <!-- Faz a página se ajustar ao tamanho da tela do celular (Mobile First) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enzo Geovane Xavier Santos | Portfólio</title>
+  <meta name="description" content="Portfólio de Enzo Geovane Xavier Santos, estudante de Desenvolvimento Full Stack (nível iniciante), com foco atual em Front-end.">
+
+  <!-- Fonte Poppins (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Ícones do Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Nosso CSS e nosso JavaScript -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Link para quem usa teclado pular direto para o conteúdo -->
+  <a class="link-pular" href="#conteudo-principal">Pular para o conteúdo</a>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="#inicio" class="logo" aria-label="Enzo Xavier — voltar ao início">
+        <span class="logo-simbolo">&lt;/&gt;</span> Enzo Xavier
+      </a>
+
+      <!-- Menu de navegação (vira menu hambúrguer no celular) -->
+      <nav id="menu-navegacao" class="menu" aria-label="Menu principal">
+        <ul class="menu-lista">
+          <li><a class="menu-link" href="#inicio">Início</a></li>
+          <li><a class="menu-link" href="#sobre">Sobre</a></li>
+          <li><a class="menu-link" href="#habilidades">Habilidades</a></li>
+          <li><a class="menu-link" href="#educacao">Educação</a></li>
+          <li><a class="menu-link" href="#portfolio">Portfólio</a></li>
+          <li><a class="menu-link" href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="cabecalho-acoes">
+        <!-- Botão de alternar tema (Dark/Light) -->
+        <button id="botao-tema" class="botao-icone" type="button" aria-label="Ativar modo escuro">
+          <i class="bi bi-moon-stars-fill" aria-hidden="true"></i>
+        </button>
+
+        <!-- Botão hambúrguer (aparece só em telas pequenas) -->
+        <button id="botao-menu" class="botao-icone botao-menu" type="button"
+                aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-navegacao">
+          <i class="bi bi-list" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <!-- ===================== HERO ===================== -->
+    <section id="inicio" class="hero">
+      <div class="container hero-conteudo">
+        <div class="hero-texto revelar">
+          <p class="hero-saudacao">Olá, eu sou</p>
+          <h1 class="hero-nome">Enzo Geovane Xavier Santos</h1>
+
+          <!-- O texto abaixo é digitado pelo JavaScript (efeito máquina de escrever).
+               O texto inicial serve de reserva caso o JavaScript não carregue. -->
+          <p class="hero-titulo">
+            <span id="texto-digitado">Estudante de Desenvolvimento Full Stack</span><span class="cursor" aria-hidden="true"></span>
+          </p>
+
+          <p class="hero-descricao">
+            Estudante iniciante, aprendendo HTML, CSS, JavaScript e lógica de programação.
+            Meu foco atual é o desenvolvimento Front-end, com o objetivo de me tornar
+            Desenvolvedor Full Stack.
+          </p>
+
+          <div class="hero-botoes">
+            <!--
+              BOTÃO DO CURRÍCULO
+              O arquivo real deve se chamar curriculo.pdf e ficar na MESMA pasta do index.html.
+              O JavaScript confere se o arquivo existe antes de baixar. Se não existir,
+              mostra um aviso honesto em vez de fingir que o download deu certo.
+            -->
+            <a id="botao-cv" class="botao botao-primario" href="curriculo.pdf" download="curriculo.pdf">
+              <i class="bi bi-download" aria-hidden="true"></i> Baixar meu CV
+            </a>
+            <a class="botao botao-secundario" href="#portfolio">
+              <i class="bi bi-folder2-open" aria-hidden="true"></i> Ver projetos
+            </a>
+            <a class="botao botao-secundario" href="#contato">
+              <i class="bi bi-chat-dots" aria-hidden="true"></i> Contato
+            </a>
+          </div>
+
+          <!-- Aviso exibido pelo JavaScript caso o currículo não esteja disponível -->
+          <p id="aviso-cv" class="aviso-cv" role="status" hidden></p>
+        </div>
+
+        <!-- Elemento visual decorativo (não tem função, por isso aria-hidden) -->
+        <div class="hero-visual revelar" aria-hidden="true">
+          <div class="hero-anel">
+            <div class="hero-miolo">
+              <span class="hero-iniciais">EX</span>
+              <span class="hero-legenda">&lt;Front-end /&gt;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SOBRE MIM ===================== -->
+    <section id="sobre" class="secao">
+      <div class="container">
+        <header class="secao-cabecalho revelar">
+          <p class="secao-etiqueta">Sobre mim</p>
+          <h2 class="secao-titulo">Quem sou eu</h2>
+        </header>
+
+        <div class="cartao cartao-sobre revelar">
+          <p>
+            Sou Enzo Geovane Xavier Santos, estudante do 1º ano do Ensino Médio Técnico em
+            Informática para Internet pela SESC Escola, em parceria com o SENAC. Tenho interesse
+            em programação e estou iniciando minha jornada na área de tecnologia, com foco atual
+            no desenvolvimento Front-end. Durante minha formação, estou aprendendo HTML, CSS,
+            JavaScript, lógica de programação e algoritmos. Nos próximos anos, pretendo expandir
+            meus conhecimentos para Back-end e desenvolvimento Mobile, construindo uma base sólida
+            para me tornar um Desenvolvedor Full Stack.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HABILIDADES ===================== -->
+    <section id="habilidades" class="secao">
+      <div class="container">
+        <header class="secao-cabecalho revelar">
+          <p class="secao-etiqueta">Hard Skills</p>
+          <h2 class="secao-titulo">Minhas habilidades</h2>
+          <p class="secao-subtitulo">Tecnologias que estou estudando durante a minha formação.</p>
+        </header>
+
+        <ul class="grade-habilidades">
+          <li class="cartao cartao-habilidade revelar">
+            <i class="bi bi-filetype-html icone-habilidade" aria-hidden="true"></i>
+            <h3>HTML5</h3>
+            <span class="etiqueta etiqueta-suave">Em aprendizado</span>
+          </li>
+          <li class="cartao cartao-habilidade revelar">
+            <i class="bi bi-filetype-css icone-habilidade" aria-hidden="true"></i>
+            <h3>CSS3</h3>
+            <span class="etiqueta etiqueta-suave">Em aprendizado</span>
+          </li>
+          <li class="cartao cartao-habilidade revelar">
+            <i class="bi bi-filetype-js icone-habilidade" aria-hidden="true"></i>
+            <h3>JavaScript</h3>
+            <span class="etiqueta etiqueta-suave">Em aprendizado</span>
+          </li>
+          <li class="cartao cartao-habilidade revelar">
+            <i class="bi bi-diagram-3 icone-habilidade" aria-hidden="true"></i>
+            <h3>Lógica de Programação</h3>
+            <span class="etiqueta etiqueta-suave">Em aprendizado</span>
+          </li>
+          <li class="cartao cartao-habilidade revelar">
+            <i class="bi bi-braces icone-habilidade" aria-hidden="true"></i>
+            <h3>Algoritmos</h3>
+            <span class="etiqueta etiqueta-suave">Em aprendizado</span>
+          </li>
+          <li class="cartao cartao-habilidade revelar">
+            <i class="bi bi-git icone-habilidade" aria-hidden="true"></i>
+            <h3>Git</h3>
+            <span class="etiqueta etiqueta-suave">Em aprendizado</span>
+          </li>
+          <li class="cartao cartao-habilidade revelar">
+            <i class="bi bi-github icone-habilidade" aria-hidden="true"></i>
+            <h3>GitHub</h3>
+            <span class="etiqueta etiqueta-suave">Em aprendizado</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== EDUCAÇÃO ===================== -->
+    <section id="educacao" class="secao">
+      <div class="container">
+        <header class="secao-cabecalho revelar">
+          <p class="secao-etiqueta">Educação</p>
+          <h2 class="secao-titulo">Minha formação</h2>
+        </header>
+
+        <article class="cartao cartao-vidro cartao-educacao revelar">
+          <div class="educacao-topo">
+            <span class="educacao-icone" aria-hidden="true"><i class="bi bi-mortarboard-fill"></i></span>
+            <div>
+              <h3 class="educacao-titulo">Ensino Médio Técnico em Informática para Internet — SESC Escola / SENAC</h3>
+              <ul class="educacao-dados">
+                <li><strong>Instituição:</strong> SESC Escola, em parceria com o SENAC.</li>
+                <li><strong>Formação:</strong> Ensino Médio integrado ao Técnico em Informática para Internet.</li>
+                <li><strong>Previsão de conclusão:</strong> 2026, conforme os dados fornecidos para este projeto.</li>
+              </ul>
+            </div>
+          </div>
+
+          <h4 class="trilha-titulo">Trilha técnica</h4>
+          <ol class="trilha">
+            <li class="modulo modulo-atual">
+              <span class="modulo-icone" aria-hidden="true"><i class="bi bi-window-desktop"></i></span>
+              <div class="modulo-texto">
+                <h5>Módulo 1 — Front-end</h5>
+                <span class="etiqueta etiqueta-destaque"><i class="bi bi-play-circle-fill" aria-hidden="true"></i> Etapa atual</span>
+              </div>
+            </li>
+            <li class="modulo">
+              <span class="modulo-icone" aria-hidden="true"><i class="bi bi-hdd-network"></i></span>
+              <div class="modulo-texto">
+                <h5>Módulo 2 — Back-end</h5>
+                <span class="etiqueta etiqueta-suave"><i class="bi bi-arrow-right-circle" aria-hidden="true"></i> Próxima etapa</span>
+              </div>
+            </li>
+            <li class="modulo">
+              <span class="modulo-icone" aria-hidden="true"><i class="bi bi-phone"></i></span>
+              <div class="modulo-texto">
+                <h5>Módulo 3 — Mobile</h5>
+                <span class="etiqueta etiqueta-neutra"><i class="bi bi-hourglass-split" aria-hidden="true"></i> Etapa futura</span>
+              </div>
+            </li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== PORTFÓLIO E ESTUDOS ===================== -->
+    <section id="portfolio" class="secao">
+      <div class="container">
+        <header class="secao-cabecalho revelar">
+          <p class="secao-etiqueta">Meu portfólio e estudos</p>
+          <h2 class="secao-titulo">O que venho construindo</h2>
+        </header>
+
+        <!-- ---------- Subseção A: Projetos de Destaque ---------- -->
+        <h3 class="subsecao-titulo revelar">Projetos de Destaque</h3>
+
+        <div class="grade-projetos">
+
+          <!-- Projeto 1 -->
+          <article class="cartao cartao-projeto revelar">
+            <!--
+              ESPAÇO PARA IMAGEM: quando tiver uma captura de tela do projeto, troque
+              o <div class="projeto-imagem"> inteiro por:
+              <img class="projeto-imagem-real" src="imagens/devsetup.png" alt="Captura de tela do site DEVSETUP Equipamentos">
+            -->
+            <div class="projeto-imagem" aria-hidden="true">
+              <i class="bi bi-image"></i>
+              <span>Imagem ilustrativa — substitua por uma captura de tela</span>
+            </div>
+            <div class="projeto-corpo">
+              <h4 class="projeto-titulo">Projeto-DEVSETUP-EQUIPAMENTOS</h4>
+              <p class="projeto-descricao">
+                Projeto de site relacionado a equipamentos de informática.
+                <em>[Descrição provisória — substitua por uma descrição das funcionalidades reais do projeto.]</em>
+              </p>
+              <ul class="lista-etiquetas" aria-label="Tecnologias utilizadas">
+                <li class="etiqueta etiqueta-pendente">[CONFIRMAR NO CÓDIGO DO PROJETO]</li>
+              </ul>
+              <div class="projeto-botoes">
+                <a class="botao botao-primario botao-pequeno"
+                   href="https://enzolindo.github.io/Projeto-DEVSETUP-EQUIPAMENTOS/"
+                   target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Ver site
+                </a>
+                <a class="botao botao-secundario botao-pequeno"
+                   href="https://github.com/enzolindo/Projeto-DEVSETUP-EQUIPAMENTOS"
+                   target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github" aria-hidden="true"></i> Repositório
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 2 -->
+          <article class="cartao cartao-projeto revelar">
+            <div class="projeto-imagem" aria-hidden="true">
+              <i class="bi bi-image"></i>
+              <span>Imagem ilustrativa — substitua por uma captura de tela</span>
+            </div>
+            <div class="projeto-corpo">
+              <h4 class="projeto-titulo">compasso-musical</h4>
+              <p class="projeto-descricao">
+                Site demonstrativo de uma loja de instrumentos musicais, com apresentação da loja,
+                catálogo de produtos, preços, depoimentos de clientes e informações de contato.
+              </p>
+              <ul class="lista-etiquetas" aria-label="Tecnologias utilizadas">
+                <li class="etiqueta etiqueta-suave">HTML5</li>
+                <li class="etiqueta etiqueta-suave">CSS3</li>
+              </ul>
+              <div class="projeto-botoes">
+                <a class="botao botao-primario botao-pequeno"
+                   href="https://enzolindo.github.io/compasso-musical/"
+                   target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Ver site
+                </a>
+                <a class="botao botao-secundario botao-pequeno"
+                   href="https://github.com/enzolindo/compasso-musical"
+                   target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github" aria-hidden="true"></i> Repositório
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!--
+            COMO ADICIONAR UM PROJETO QUE AINDA NÃO ESTÁ PRONTO:
+            copie um <article> acima e troque os <a> dos botões por:
+            <span class="botao botao-desativado botao-pequeno" aria-disabled="true">Em breve</span>
+          -->
+        </div>
+
+        <!-- ---------- Subseção B: Repositórios de Estudo ---------- -->
+        <h3 class="subsecao-titulo revelar">Repositórios de Estudo</h3>
+        <p class="secao-subtitulo revelar">Anotações e exercícios feitos em sala de aula.</p>
+
+        <ul class="lista-estudos">
+          <li class="item-estudo revelar">
+            <span class="estudo-icone" aria-hidden="true"><i class="bi bi-filetype-html"></i></span>
+            <div class="estudo-texto">
+              <h4>Trilha de HTML e CSS</h4>
+              <p>Anotações e exercícios de HTML e CSS.</p>
+            </div>
+            <a class="estudo-link" href="https://github.com/enzolindo/html"
+               target="_blank" rel="noopener noreferrer" aria-label="Abrir o repositório Trilha de HTML e CSS no GitHub">
+              <i class="bi bi-github" aria-hidden="true"></i> Abrir
+            </a>
+          </li>
+          <li class="item-estudo revelar">
+            <span class="estudo-icone" aria-hidden="true"><i class="bi bi-filetype-js"></i></span>
+            <div class="estudo-texto">
+              <h4>Trilha de JavaScript Vanilla</h4>
+              <p>Anotações e exercícios de JavaScript puro.</p>
+            </div>
+            <a class="estudo-link" href="https://github.com/enzolindo/JavaScript"
+               target="_blank" rel="noopener noreferrer" aria-label="Abrir o repositório Trilha de JavaScript Vanilla no GitHub">
+              <i class="bi bi-github" aria-hidden="true"></i> Abrir
+            </a>
+          </li>
+          <li class="item-estudo revelar">
+            <span class="estudo-icone" aria-hidden="true"><i class="bi bi-diagram-3"></i></span>
+            <div class="estudo-texto">
+              <h4>Lógica de Programação e Algoritmos</h4>
+              <p>Exercícios em Portugol.</p>
+            </div>
+            <a class="estudo-link" href="https://github.com/enzolindo/algoritmos"
+               target="_blank" rel="noopener noreferrer" aria-label="Abrir o repositório Lógica de Programação e Algoritmos no GitHub">
+              <i class="bi bi-github" aria-hidden="true"></i> Abrir
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== CONTATO (sem formulário) ===================== -->
+    <section id="contato" class="secao">
+      <div class="container">
+        <header class="secao-cabecalho revelar">
+          <p class="secao-etiqueta">Contato</p>
+          <h2 class="secao-titulo">Vamos Conversar?</h2>
+          <p class="secao-subtitulo">Escolha o canal que preferir para falar comigo.</p>
+        </header>
+
+        <ul class="grade-contatos">
+          <!-- E-mail: usa mailto, por isso não abre em nova aba -->
+          <li class="revelar">
+            <a class="cartao-contato contato-email" href="mailto:en964776@gmail.com">
+              <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+              <span class="contato-nome">E-mail</span>
+              <span class="contato-detalhe">en964776@gmail.com</span>
+            </a>
+          </li>
+
+          <li class="revelar">
+            <a class="cartao-contato contato-github" href="https://github.com/enzolindo"
+               target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github" aria-hidden="true"></i>
+              <span class="contato-nome">GitHub</span>
+              <span class="contato-detalhe">github.com/enzolindo</span>
+            </a>
+          </li>
+
+          <li class="revelar">
+            <a class="cartao-contato contato-instagram" href="https://www.instagram.com/engiju_of/"
+               target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+              <span class="contato-nome">Instagram</span>
+              <span class="contato-detalhe">@engiju_of</span>
+            </a>
+          </li>
+
+          <!-- LinkedIn: ainda não disponível, então NÃO é um link -->
+          <li class="revelar">
+            <div class="cartao-contato contato-linkedin contato-pendente" aria-disabled="true">
+              <i class="bi bi-linkedin" aria-hidden="true"></i>
+              <span class="contato-nome">LinkedIn</span>
+              <span class="contato-detalhe">Em breve</span>
+            </div>
+          </li>
+          <!-- WhatsApp foi omitido de propósito, conforme solicitado. -->
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <p>&copy; <span id="ano-atual">2026</span> Enzo Geovane Xavier Santos. Todos os direitos reservados.</p>
+      <p>Desenvolvido com <span class="rodape-coracao" aria-label="amor">&hearts;</span> por Enzo Geovane Xavier Santos</p>
+      <a class="rodape-link" href="https://github.com/enzolindo" target="_blank" rel="noopener noreferrer">
+        <i class="bi bi-github" aria-hidden="true"></i> github.com/enzolindo
+      </a>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante "Voltar ao Topo" (aparece ao rolar a página) -->
+  <button id="botao-topo" class="botao-topo" type="button" aria-label="Voltar ao topo da página">
+    <i class="bi bi-arrow-up" aria-hidden="true"></i>
+  </button>
+</body>
+</html>
